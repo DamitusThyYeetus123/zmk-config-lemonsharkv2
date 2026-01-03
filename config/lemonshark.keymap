@@ -38,15 +38,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        brc_blt: brc_blt {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BRC_BLT";
-            bindings = <&mo 0>, <&mo 2>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
         game_mode: game_mode {
             compatible = "zmk,behavior-toggle-layer";
             label = "GAME_MODE";
@@ -75,9 +66,9 @@
 &kp TAB    &kp Q   &kp W                   &kp F                &kp P              &kp B      &kp RS(K_VOL_DN)
                                                                                                                 &kp MINUS  &kp K     &kp L              &kp U               &kp Y               &kp SQT   &kp SEMI
 &kp GRAVE  &kp A   &hrm_index LCTRL RS(R)  &hrm_index LSHIFT S  &hrm_index LGUI T  &kp G      &space_del
-                                                                                                                &enter     &kp M     &hrm_index LGUI T  &hrm_index RSHFT E  &hrm_index RCTRL I  &kp O     &mo 3
+                                                                                                                &enter     &kp M     &hrm_index LGUI T  &hrm_index RSHFT E  &hrm_index RCTRL I  &kp O     &mo 2
 &kp LSHFT  &kp Z   &kp X                   &kp C                &kp D              &kp LCTRL  &mo 1
-                                                                                                                &kp RSHFT  &kp RALT  &kp H              &kp COMMA           &kp DOT             &kp FSLH  &to 6
+                                                                                                                &kp RSHFT  &kp RALT  &kp H              &kp COMMA           &kp DOT             &kp FSLH  &mo 4
             >;
 
             label = "Default";
@@ -85,58 +76,30 @@
 
         brackets {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &trans            &trans    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &kp LBRC          &kp RBRC  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &kp LEFT_BRACKET  &kp RBKT  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &trans            &trans    &trans  &trans  &trans
-            >;
-        };
-
-        bluetooth {
-            bindings = <
-&trans  &trans        &trans        &trans        &trans        &trans        &trans
-                                                                                          &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &bt BT_CLR    &trans
-                                                                                          &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_PRV
-                                                                                          &bt BT_NXT  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &trans
-                                                                                          &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp KP_NUMBER_7      &kp RS(KP_NUMBER_8)  &kp KP_NUMBER_9  &trans  &trans
+                                                                                           &trans  &trans  &trans            &trans    &trans  &trans  &trans
+&trans  &trans  &kp KP_NUMBER_4      &kp KP_NUMBER_5      &kp KP_NUMBER_6  &trans  &trans
+                                                                                           &trans  &trans  &kp LBRC          &kp RBRC  &trans  &trans  &trans
+&trans  &trans  &kp KP_NUMBER_1      &kp KP_NUMBER_2      &kp KP_NUMBER_3  &trans  &trans
+                                                                                           &trans  &trans  &kp LEFT_BRACKET  &kp RBKT  &trans  &trans  &trans
+&trans  &trans  &kp RS(KP_NUMBER_0)  &kp KP_DOT           &trans           &trans  &trans
+                                                                                           &trans  &trans  &trans            &trans    &trans  &trans  &trans
             >;
         };
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &trans    &trans    &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &trans    &kp UP    &trans     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                        &trans  &trans  &trans    &trans    &trans     &trans  &trans
+&trans  &trans  &kp F1   &kp F2   &kp F3   &trans  &trans
+                                                           &trans  &trans  &trans    &trans    &trans     &trans  &trans
+&trans  &trans  &kp F4   &kp F5   &kp F6   &trans  &trans
+                                                           &trans  &trans  &trans    &kp UP    &trans     &trans  &trans
+&trans  &trans  &kp F7   &kp F8   &kp F9   &trans  &trans
+                                                           &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &trans
+&trans  &trans  &kp F10  &kp F11  &kp F12  &trans  &trans
+                                                           &trans  &trans  &trans    &trans    &trans     &trans  &trans
             >;
 
             label = "nav";
-        };
-
-        function {
-            bindings = <
-&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5  &trans
-                                                          &trans  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &trans
-&trans  &kp F11  &kp F12  &trans  &trans  &trans  &trans
-                                                          &trans  &trans  &trans  &trans  &trans  &trans   &trans
-&trans  &trans   &trans   &trans  &trans  &trans  &trans
-                                                          &trans  &trans  &trans  &trans  &trans  &trans   &to 0
-&trans  &trans   &trans   &trans  &trans  &trans  &trans
-                                                          &trans  &trans  &trans  &trans  &trans  &trans   &to 6
-            >;
-
-            label = "func";
         };
 
         games {
@@ -148,7 +111,7 @@
 &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G   &trans
                                                            &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans  &to 0
 &kp LCTRL  &kp Z   &kp X   &kp C   &kp V   &trans  &trans
-                                                           &trans  &trans  &trans    &trans    &trans     &trans  &to 6
+                                                           &trans  &trans  &trans    &trans    &trans     &trans  &to 4
             >;
 
             label = "WASD";
@@ -156,14 +119,14 @@
 
         menu {
             bindings = <
-&studio_unlock  &trans  &trans  &trans        &trans  &trans  &trans
-                                                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans  &trans  &trans        &trans  &trans  &trans
-                                                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans  &trans  &game_mode 5  &to 4   &trans  &trans
-                                                                      &trans  &trans  &to 2   &trans  &trans  &trans  &to 0
-&trans          &trans  &trans  &trans        &trans  &trans  &trans
-                                                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&studio_unlock  &trans        &trans        &trans        &trans        &trans        &trans
+                                                                                                  &trans      &trans  &trans        &trans  &trans  &trans  &trans
+&trans          &trans        &trans        &trans        &trans        &bt BT_CLR    &trans
+                                                                                                  &trans      &trans  &trans        &trans  &trans  &trans  &trans
+&trans          &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_PRV
+                                                                                                  &bt BT_NXT  &trans  &game_mode 3  &to 5   &trans  &trans  &to 0
+&trans          &trans        &trans        &trans        &trans        &trans        &trans
+                                                                                                  &trans      &trans  &trans        &trans  &trans  &trans  &trans
             >;
 
             label = "menu";
@@ -178,7 +141,7 @@
 &trans  &trans                          &trans                          &trans                          &rgb_ug RGB_TOG                 &trans                          &trans
                                                                                                                                                                                          &trans           &trans                          &rgb_ug RGB_TOG                 &trans                          &trans                          &trans                          &to 0
 &trans  &trans                          &trans                          &trans                          &trans                          &trans                          &trans
-                                                                                                                                                                                         &trans           &trans                          &trans                          &trans                          &trans                          &trans                          &to 6
+                                                                                                                                                                                         &trans           &trans                          &trans                          &trans                          &trans                          &trans                          &to 4
             >;
         };
     };
